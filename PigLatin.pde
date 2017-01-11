@@ -6,17 +6,20 @@ public void setup() {
 	String words[] = loadStrings("words.txt");
 	System.out.println("there are " + words.length + " lines");
 	for (int i = 0 ; i < words.length; i++) {
-	  System.out.println(pigLatin(words[i]));
+		System.out.println(pigLatin(words[i]));
 	}
 	String hymn[] = loadStrings("LowellHymn.txt");
 	System.out.println("there are " + hymn.length + " lines");
+	
 	for (int i = 0 ; i < hymn.length; i++) {
-	  System.out.println(pigLatin(hymn[i]));
+		String[] split = hymn[i].split("([^\\w&&[^']])");
+		System.out.println(Arrays.toString(split));
 	}
 }
 
 public void draw() {
 }
+
 public int findFirstVowel(String sWord) {
 	//precondition: sWord is a valid String of length greater than 0.
 	//postcondition: returns the position of the first vowel in sWord.  If there are no vowels, returns -1
