@@ -11,10 +11,13 @@ public void setup() {
 		System.out.println(pigLatin(words[i]));
 	}
 	println();
+
+	// doesn't print commas or periods
 	String hymn[] = loadStrings("LowellHymn.txt");
 	System.out.println("there are " + hymn.length + " lines");
 	for (int i = 0; i < hymn.length; i++) {
 		String line = new String();
+		// for precondition
 		if (hymn[i].length() > 0) {
 			String split[] = hymn[i].split("([^\\w&&[^'-]])");
 			for (int j = 0;  j < split.length; j++) {
